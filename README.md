@@ -7,14 +7,14 @@ ICCV 2023 [[Paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Lee_Onl
 
 ## Overview
 ### Comparison to previous setups
-<img src="./figs/figure1_setup_comparison.png" width="450">
+<img src="./figs/figure1_setup_comparison.png" width="700"> \\
 
 ### Scenarios with hierarchial label expansion
-<img src="./figs/figure2_expansion_scenario.png" width="450">
-(a) single-depth and (b) multi-depth scenarios
+<img src="./figs/figure2_expansion_scenario.png" width="700">
+(a) single-depth and (b) multi-depth scenarios \\
 
 ### PL-FMS
-<img src="./figs/figure3_method_.png" width="450">
+<img src="./figs/figure3_method_.png" width="700"> \\
 
 ### Abstract
 Despite rapid advances in continual learning, a large body of research is devoted to improving performance in the existing setups.
