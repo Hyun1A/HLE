@@ -43,23 +43,33 @@ pip install -r requirements.txt
 ## Running Experiments
 
 ### Downloading the Datasets
-CIFAR100 can be downloaded by running the corresponding scripts in the `dataset/` directory.
+CIFAR100 can be downloaded by running the corresponding scripts in the `./data/datasets/` directory.
 ImageNet dataset can be downloaded from [ImageNet](https://www.kaggle.com/c/imagenet-object-localization-challenge). Stanford cars can be downloaded from [StanfordCars](https://www.kaggle.com/datasets/jessicali9530/stanford-cars-dataset). iNaturalist-19 can be downloaded from [iNaturalist19](https://github.com/visipedia/inat_comp/tree/master/2019#Data)
 
 ### Experiments Using Shell Script
-Experiments for the implemented methods can be run by executing the shell scripts provided in `scripts/` directory with the commands in the form of:
+Experiments for the implemented methods can be run by:
+
+**single-label secnario**
 <pre>
-bash scripts/{Scenario}.sh {Dataset} {Method}
+cd single_depth
+sh scripts/single_label.sh {Dataset} {Method}
 </pre>
 
-For example, you may run HLE CL experiments under single-label scenario using PL-FMS method by
+**dual-label secnario**
 <pre>
-bash scripts/single_label.sh cifar100 pl_fms
+cd single_depth
+sh scripts/dual_label.sh {Dataset} {Method}
 </pre>
+
+**multi-depth secnario**
+<pre>
+cd single_depth
+sh scripts/multi_depth.sh {Dataset} {Method}
+</pre>
+
 
 You can change the arguments for different experiments.
-- `Scenario`: Available scenarios are [single_label, dual_label, multi-depth]
-- `Dataset`: Dataset to use in experiment. Supported datasets are [cifar100, stanford_cars, imagenet] for single-label & dual-label scenarios and [cifar100, iNaturalist-19] for multi-depth scenario. 
+- `Dataset`: Dataset to use in experiment. Supported datasets are [cifar100, stanford_car, imagenet] for single-label & dual-label scenarios and [cifar100, inat19] for multi-depth scenario. 
 - `MODE`: CL method to be applied. Methods implemented in this version are: [pl_fms, clib, er, ewc++, bic, mir, gdumb, rm]
 
 ## Citation
