@@ -1,7 +1,7 @@
 # Official Implementation of PL-FMS (Online Continual Learning on Hierarchical Label Expansion)
 
 **Online Continual Learning on Hierarchical Label Expansion**<br>
-Byung Hyun Lee<sup>\*</sup>, Okchul Jung<sup>\*</sup>, Jonghyun Choi<sup>&dagger</sup>, Se Young Chun<br>
+Byung Hyun Lee<sup>\*</sup>, Okchul Jung<sup>\*</sup>, Jonghyun Choi<sup>&dagger;</sup>, Se Young Chun<br>
 ICLR 2022 [[Paper](https://openreview.net/pdf?id=nrGGfMbY_qK)]<br>
 (\* indicates equal contribution)
 
