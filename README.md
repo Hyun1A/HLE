@@ -1,7 +1,7 @@
 # Official Implementation of PL-FMS (Online Continual Learning on Hierarchical Label Expansion)
 
-**Online Continual Learning on Hierarchical Label Expansion (HLE)**<br>
-Byung Hyun Lee<sup>\*</sup>, Okchul Jung<sup>\*</sup>, Jonghyun Choi<sup>&dagger;</sup>, Se Young Chun<sup>&dagger;</sup><br>
+##Online Continual Learning on Hierarchical Label Expansion
+<br>Byung Hyun Lee<sup>\*</sup>, Okchul Jung<sup>\*</sup>, Jonghyun Choi<sup>&dagger;</sup>, Se Young Chun<sup>&dagger;</sup><br>
 (\* indicates equal contribution, &dagger; indicates corresponding author)
 
 ICCV 2023 [[Paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Lee_Online_Continual_Learning_on_Hierarchical_Label_Expansion_ICCV_2023_paper.pdf)]<br>
@@ -10,7 +10,7 @@ ICCV 2023 [[Paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Lee_Onl
 ## Overview
 ### Comparison to previous setups
 <img src="./figs/figure1_setup_comparison.png" width="700">
-(a) conventional task-free online CL, (b) blurry task-free online CL setup, and (c) Proposed HLE CL setup
+(a) conventional task-free online CL, (b) blurry task-free online CL setup, and (c) proposed Hierarchical Label Expansion (HLE) CL setup
 
 
 ### Scenarios with hierarchial label expansion
