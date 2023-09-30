@@ -1,13 +1,20 @@
 # Official Implementation of PL-FMS (Online Continual Learning on Hierarchical Label Expansion)
 
 **Online Continual Learning on Hierarchical Label Expansion**<br>
-Byung Hyun Lee<sup>\*</sup>, Okchul Jung<sup>\*</sup>, Jonghyun Choi<sup>&dagger;</sup>, Se Young Chun<br>
-ICLR 2022 [[Paper](https://openreview.net/pdf?id=nrGGfMbY_qK)]<br>
-(\* indicates equal contribution)
+Byung Hyun Lee<sup>\*</sup>, Okchul Jung<sup>\*</sup>, Jonghyun Choi<sup>&dagger;</sup>, Se Young Chun<sup>&dagger;</sup><br>
+ICCV 2023 [[Paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Lee_Online_Continual_Learning_on_Hierarchical_Label_Expansion_ICCV_2023_paper.pdf)]<br>
+(\* indicates equal contribution, &dagger; indicates corresponding author)
 
 ## Overview
-<img src="./overview.png" width="450">
-<img src="./method_overview.png" width="450">
+### Comparison to previous setups
+<img src="./figs/figure1_setup_comparison.png" width="450">
+
+### Scenarios with hierarchial label expansion
+<img src="./figs/figure2_expansion_scenario.png" width="450">
+(a) single-depth and (b) multi-depth scenarios
+
+### PL-FMS
+<img src="./figs/figure3_method_.png" width="450">
 
 ### Abstract
 Despite rapid advances in continual learning, a large body of research is devoted to improving performance in the existing setups.
