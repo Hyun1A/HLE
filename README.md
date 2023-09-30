@@ -2,8 +2,10 @@
 
 **Online Continual Learning on Hierarchical Label Expansion (HLE)**<br>
 Byung Hyun Lee<sup>\*</sup>, Okchul Jung<sup>\*</sup>, Jonghyun Choi<sup>&dagger;</sup>, Se Young Chun<sup>&dagger;</sup><br>
-ICCV 2023 [[Paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Lee_Online_Continual_Learning_on_Hierarchical_Label_Expansion_ICCV_2023_paper.pdf)]<br>
 (\* indicates equal contribution, &dagger; indicates corresponding author)
+
+ICCV 2023 [[Paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Lee_Online_Continual_Learning_on_Hierarchical_Label_Expansion_ICCV_2023_paper.pdf)]<br>
+
 
 ## Overview
 ### Comparison to previous setups
@@ -19,25 +21,15 @@ ICCV 2023 [[Paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Lee_Onl
 <img src="./figs/figure3_method_.png" width="700">
 
 ### Abstract
-Despite rapid advances in continual learning, a large body of research is devoted to improving performance in the existing setups.
-While a handful of work do propose new continual learning setups, they still lack practicality in certain aspects.
-For better practicality, we first propose a novel continual learning setup that is online, task-free, class-incremental, of blurry task boundaries and subject to inference queries at any moment.
-We additionally propose a new metric to better measure the performance of the continual learning methods subject to inference queries at any moment.
-To address the challenging setup and evaluation protocol, we propose an effective method that employs a new memory management scheme and novel learning techniques.
-Our empirical validation demonstrates that the proposed method outperforms prior arts by large margins.
-### Results
-Results of CL methods on various datasets, for online continual learning on i-Blurry-50-10 split, measured by <img src="https://render.githubusercontent.com/render/math?math=A_\text{AUC}"> metric.
-For more details, please refer to our [paper](https://arxiv.org/pdf/2110.10031.pdf).
+Continual learning (CL) enables models to adapt to new tasks and environments without forgetting previously learned knowledge. While current CL setups have ignored the relationship between labels in the past task and the new task with or without small task overlaps, real-world scenarios often involve hierarchical relationships between old and new tasks, posing another challenge for traditional CL approaches. To address this challenge, we propose a novel multi-level hierarchical class incremental task configuration with an online learning constraint, called hierarchical label expansion (HLE). Our configuration allows a network to first learn coarse-grained classes, with data labels continually expanding to more fine-grained classes in various hierarchy depths. To tackle this new setup, we propose a rehearsal-based method that utilizes hierarchy-aware pseudo-labeling to incorporate hierarchical class information. Additionally, we propose a simple yet effective memory management and sampling strategy that selectively adopts samples of newly encountered classes. Our experiments demonstrate that our proposed method can effectively use hierarchy on our HLE setup to improve classification accuracy across all levels of hierarchies, regardless of depth and class imbalance ratio, outperforming prior arts by significant margins while also outperforming them on the conventional disjoint, blurry and i-Blurry CL setups.
 
-| Methods     | CIFAR10        | CIFAR100       | TinyImageNet   | ImageNet  |
-|-------------|----------------|----------------|----------------|-----------|
-| EWC++       | 57.34±2.10     | 35.35±1.96     | 22.26±1.15     | 24.81     |
-| BiC         | 58.38±0.54     | 33.51±3.04     | 22.80±0.94     | 27.41     |
-| ER-MIR      | 57.28±2.43     | 35.35±1.41     | 22.10±1.14     | 20.48     |
-| GDumb       | 53.20±1.93     | 32.84±0.45     | 18.17±0.19     | 14.41     |
-| RM          | 23.00±1.43     | 8.63±0.19      | 5.74±0.30      | 6.22      |
-| Baseline-ER | 57.46±2.25     | 35.61±2.08     | 22.45±1.15     | 25.16     |
-| **CLIB**    | **70.26±1.28** | **46.67±0.79** | **23.87±0.68** | **28.16** |
+### Results on the single-depth scenario
+<img src="./figs/figure4_depth1.png.png" width="700">
+
+
+### Results on the multi-depth scenario
+<img src="./figs/figure5_depth5.png" width="700">
+
 
 ## Getting Started
 To set up the environment for running the code, you can either use the docker container, or manually install the requirements in a virtual environment.
