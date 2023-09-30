@@ -15,7 +15,7 @@ ICCV 2023 [[Paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Lee_Onl
 
 ### Scenarios with hierarchial label expansion
 <img src="./figs/figure2_expansion_scenario.png" width="700">
-(a) single-depth and (b) multi-depth scenarios
+(a) single-depth (single-label & dual-label) and (b) multi-depth scenarios
 
 ### PL-FMS
 <img src="./figs/figure3_method.png" width="700">
@@ -29,10 +29,11 @@ Continual learning (CL) enables models to adapt to new tasks and environments wi
 
 ## Getting Started
 ### Experiment environment
-OS: Ubuntu 20.04 LTS
-GPU: Geforce RTX 3090
+**OS**: Ubuntu 20.04 LTS
 
-To set up the environment for running the code, we provide requirements.txt that can be installed using the command
+**GPU**: Geforce RTX 3090 with CUDA 11.1
+
+To set up the python environment for running the code, we provide requirements.txt that can be installed using the command
 <pre>
 pip install -r requirements.txt
 </pre>
@@ -40,44 +41,42 @@ pip install -r requirements.txt
 ## Running Experiments
 
 ### Downloading the Datasets
-CIFAR10, CIFAR100, and TinyImageNet can be downloaded by running the corresponding scripts in the `dataset/` directory.
-ImageNet dataset can be downloaded from [Kaggle](https://www.kaggle.com/c/imagenet-object-localization-challenge).
+CIFAR100 can be downloaded by running the corresponding scripts in the `dataset/` directory.
+ImageNet dataset can be downloaded from [ImageNet](https://www.kaggle.com/c/imagenet-object-localization-challenge). Stanford cars can be downloaded from [StanfordCars](https://www.kaggle.com/datasets/jessicali9530/stanford-cars-dataset). iNaturalist-19 can be downloaded from [iNaturalist19](https://github.com/visipedia/inat_comp/tree/master/2019#Data)
 
 ### Experiments Using Shell Script
-Experiments for the implemented methods can be run by executing the shell scripts provided in `scripts/` directory.
-For example, you may run CL experiments using CLIB method by
+Experiments for the implemented methods can be run by executing the shell scripts provided in `scripts/` directory with the commands in the form of:
 <pre>
-bash scripts/clib.sh
+bash scripts/{Scenario}.sh {Dataset} {Method}
 </pre>
-You may change various arguments for different experiments.
-- `NOTE`: Short description of the experiment. Experiment result and log will be saved at `results/DATASET/NOTE`.
-  - WARNING: logs/results with the same dataset and note will be overwritten!
-- `MODE`: CL method to be applied. Methods implemented in this version are: [clib, er, ewc++, bic, mir, gdumb, rm]
-- `DATASET`: Dataset to use in experiment. Supported datasets are: [cifar10, cifar100, tinyimagenet, imagenet]
-- `N_TASKS`: Number of tasks. Note that corresponding json file should exist in `collections/` directory.
-- `N`: Percentage of disjoint classes in i-blurry split. N=100 for full disjoint, N=0 for full blurry. Note that corresponding json file should exist in `collections/` directory.
-- `M`: Blurry ratio of blurry classes in i-blurry split. Note that corresponding json file should exist in `collections/` directory.
-- `GPU_TRANSFORM`: Perform AutoAug on GPU, for faster running.
-- `USE_AMP`: Use automatic mixed precision (amp), for faster running and reducing memory cost.
-- `MEM_SIZE`: Maximum number of samples in the episodic memory.
-- `ONLINE_ITER`: Number of model updates per sample.
-- `EVAL_PERIOD`: Period of evaluation queries, for calculating <img src="https://render.githubusercontent.com/render/math?math=A_\text{AUC}">.
+
+For example, you may run HLE CL experiments under single-label scenario using PL-FMS method by
+<pre>
+bash scripts/single_label.sh cifar100 pl_fms
+</pre>
+
+You can change the arguments for different experiments.
+- `Scenario`: Available scenarios are [single_label, dual_label, multi-depth]
+- `Dataset`: Dataset to use in experiment. Supported datasets are [cifar100, stanford_cars, imagenet] for single-label & dual-label scenarios and [cifar100, iNaturalist-19] for multi-depth scenario. 
+- `MODE`: CL method to be applied. Methods implemented in this version are: [pl_fms, clib, er, ewc++, bic, mir, gdumb, rm]
 
 ## Citation
-If you used our code or i-blurry setup, please cite our paper.
+If you used our code for HLE continual learning setup, please cite our paper.
 <pre>
-@inproceedings{koh2022online,
-  title={Online Continual Learning on Class Incremental Blurry Task Configuration with Anytime Inference},
-  author={Koh, Hyunseo and Kim, Dahyun and Ha, Jung-Woo and Choi, Jonghyun},
-  booktitle={ICLR},
-  year={2022}
-}
+@InProceedings{Lee_2023_ICCV,
+  author    = {Lee, Byung Hyun and Jung, Okchul and Choi, Jonghyun and Chun, Se Young},
+  title     = {Online Continual Learning on Hierarchical Label Expansion},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  month     = {October},
+  year      = {2023},
+  pages     = {11761-11770}
+} 
 </pre>
 
 ## License
-```
-Copyright (C) 2022-present NAVER Corp.
+This code is implemented based on [the code of i-Blurry CL](https://github.com/naver-ai/i-Blurry). More details for our code can be found from this base code.
 
+```
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
