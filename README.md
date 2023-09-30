@@ -1,6 +1,6 @@
 # Official Implementation of PL-FMS (Online Continual Learning on Hierarchical Label Expansion)
 
-##Online Continual Learning on Hierarchical Label Expansion
+**Online Continual Learning on Hierarchical Label Expansion**
 <br>Byung Hyun Lee<sup>\*</sup>, Okchul Jung<sup>\*</sup>, Jonghyun Choi<sup>&dagger;</sup>, Se Young Chun<sup>&dagger;</sup><br>
 (\* indicates equal contribution, &dagger; indicates corresponding author)
 
@@ -28,31 +28,11 @@ Continual learning (CL) enables models to adapt to new tasks and environments wi
 
 
 ## Getting Started
-To set up the environment for running the code, you can either use the docker container, or manually install the requirements in a virtual environment.
-### Using Docker Container (Recommended)
-We provide the Docker image `khs8157/iblurry` on Docker Hub for reproducing the results.
-To download the docker image, run the following command:
-<pre>
-docker pull khs8157/iblurry:latest
-</pre>
-After pulling the image, you may run the container via following command:
-<pre>
-docker run --gpus all -it --shm-size=64gb -v <i>/PATH/TO/CODE</i>:<i>/PATH/TO/CODE</i> --name=<i>CONTAINER_NAME</i> khs8157/iblurry:latest bash
-</pre>
-Replace the arguments written in <i>italic</i> with your own arguments.
+### Experiment environment
+OS: Ubuntu 20.04 LTS
+GPU: Geforce RTX 3090
 
-### Requirements
-- Python3
-- Pytorch (>=1.9)
-- torchvision (>=0.10)
-- numpy
-- pillow~=6.2.1
-- torch_optimizer
-- randaugment
-- easydict
-- pandas~=1.1.3
-
-If not using Docker container, install the requirements using the following command
+To set up the environment for running the code, we provide requirements.txt that can be installed using the command
 <pre>
 pip install -r requirements.txt
 </pre>
