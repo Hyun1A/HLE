@@ -75,7 +75,7 @@ You can change the arguments for different experiments.
 ## Citation
 If you used our code for HLE continual learning setup, please cite our paper.
 <pre>
-@InProceedings{Lee_2023_ICCV,
+@InProceedings{lee2023hle,
   author    = {Lee, Byung Hyun and Jung, Okchul and Choi, Jonghyun and Chun, Se Young},
   title     = {Online Continual Learning on Hierarchical Label Expansion},
   booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
