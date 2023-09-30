@@ -33,6 +33,8 @@ Continual learning (CL) enables models to adapt to new tasks and environments wi
 
 **GPU**: Geforce RTX 3090 with CUDA 11.1
 
+**Python**: 3.8.15
+
 To set up the python environment for running the code, we provide requirements.txt that can be installed using the command
 <pre>
 pip install -r requirements.txt
