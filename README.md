@@ -49,21 +49,21 @@ ImageNet dataset can be downloaded from [ImageNet](https://www.kaggle.com/c/imag
 ### Experiments Using Shell Script
 Experiments for the implemented methods can be run by:
 
-**single-label secnario**
+**Single-label secnario**
 <pre>
 cd single_depth
 sh scripts/single_label.sh {Dataset} {Method}
 </pre>
 
-**dual-label secnario**
+**Dual-label secnario**
 <pre>
 cd single_depth
 sh scripts/dual_label.sh {Dataset} {Method}
 </pre>
 
-**multi-depth secnario**
+**Multi-depth secnario**
 <pre>
-cd single_depth
+cd multi_depth
 sh scripts/multi_depth.sh {Dataset} {Method}
 </pre>
 
